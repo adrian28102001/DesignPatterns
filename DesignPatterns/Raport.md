@@ -98,9 +98,7 @@ with its abstract method to generate object
 of concrete class based on given information. For instance, we have RoundedShapeFactory
 and SharpShapeFactory.
 
-````
 Bank factory
-````
 
 ```csharp
 public class BankFactory : AbstractFactory
