@@ -206,7 +206,7 @@ Further, implementing the interface in a concrete class Rectangle.We created a c
 with two parameters length and height. To proceed the implemented method return the cloned object
 with those parameters.
 
-````
+```csharp
 public class EmployeeRecord : IPrototype
 {
     private readonly int _id;
@@ -238,7 +238,7 @@ public class EmployeeRecord : IPrototype
 Here we can observe the cloning process. A clone object rectangle is generated with 2 different
 parameters and the new area si computed.
 
-````
+```csharp
 public class Program
 {
     public static void Main(string[] args)
@@ -264,7 +264,7 @@ Builder pattern builds a complex object using simple objects and using a step-by
 We are going to create an Item interface representing square type items such as big squares or
 small squares and concrete classes implementing the Item interface
 
-````
+```csharp
 public interface ITem
 {
     public string Name();
@@ -427,7 +427,7 @@ public class MealBuilder
 
 To see the builder pattern the follow the code below.
 
-````
+```csharp
 public class Program
 {
     public static void Main(string[] args)
