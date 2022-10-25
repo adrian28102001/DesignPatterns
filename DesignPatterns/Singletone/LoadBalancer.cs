@@ -11,7 +11,6 @@ public class LoadBalancer
 
     private LoadBalancer()
     {
-        // Load list of available servers
         _servers = new List<Server>
         {
             new() {Name = "ServerI", IP = "120.14.220.18"},
