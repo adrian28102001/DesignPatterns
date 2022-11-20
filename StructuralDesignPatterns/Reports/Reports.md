@@ -90,7 +90,27 @@ We continue by creating the adapter class BankCustomer. This class is a wrapper 
 the desired target interface and modifies the specific request available from the Adaptee class.
 
 ````
-!!!!!!!!!!!!!!adauga te rog adapter class!!!!!!!!!!!!!!!!!!!
+public class BankCustomer : BankDetails, ICreditCard
+{
+    private const string _bankName = "VictoriaBank";
+    private const string _accountHolderName = "Adrian";
+    private const long _accountNumber = 123;
+
+
+    public void GiveBankDetails()
+    {
+        SetBankDetails(_bankName, _accountHolderName, _accountNumber);
+    }
+
+    public string GetCreditCard()
+    {
+        var bankName = GetBankName();
+        var accountHolderName = GetAccountHolderName();
+        var accountNumber = GetAccountNumber();
+
+        return $"Bank {bankName} has a user with name {accountHolderName} and accountNumber {accountNumber}";
+    }
+}
 ````
 
 
@@ -215,7 +235,6 @@ public class CustomersBase
     }
 }
 ````
-AICI NU STIU CE SA SCRIU XDDD
 
 ````
 public class Customers : CustomersBase
