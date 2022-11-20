@@ -1,6 +1,8 @@
 ﻿using StructuralDesignPatterns.Adapter;
 using StructuralDesignPatterns.Bridge;
 using StructuralDesignPatterns.Composite;
+using StructuralDesignPatterns.Decorator;
+using StructuralDesignPatterns.Facade;
 
 namespace StructuralDesignPatterns;
 
@@ -44,10 +46,39 @@ public static class Program
         manager1.GetEmployee();
     }
 
+    private static void DecoratorMain()
+    {
+        var vegFood = new VegFood();
+        var foodPriceVeg = vegFood.FoodPrice();
+        var prepareFoodVeg = vegFood.PrepareFood();
+
+        Console.WriteLine($"At a price of {foodPriceVeg} I will prepare {prepareFoodVeg}");
+
+        var nonVegFood = new NonVegFood(vegFood);
+        var foodPriceNonVeg = nonVegFood.FoodPrice();
+        var prepareFoodNonVeg = nonVegFood.PrepareFood();
+
+        Console.WriteLine($"At a price of {foodPriceNonVeg} I will prepare {prepareFoodNonVeg}");
+
+        var chinese = new ChineseFood(vegFood);
+        var foodPriceChinese = chinese.FoodPrice();
+        var prepareFoodChinese = chinese.PrepareFood();
+
+        Console.WriteLine($"At a price of {foodPriceChinese} I will prepare {prepareFoodChinese}");
+    }
+
+    private static void FacadeMain()
+    {
+        var shopKeeper=new ShopKeeper();
+        shopKeeper.IphoneSale();
+        shopKeeper.SamsungSale();
+    }
     public static void Main(string[] args)
     {
-        // AdapterMain();
-        // BridgeMain();
+        AdapterMain();
+        BridgeMain();
         CompositePattern();
+        DecoratorMain();
+        FacadeMain();
     }
 }
